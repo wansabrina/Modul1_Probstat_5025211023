@@ -16,8 +16,8 @@ Dengan metode distribusi Geometrik, dapat menggunakan fungsi yang telah disediak
   peluang <- dgeom(x, p)
   paste("Peluang =", peluang)
   ``` 
-   Setelah dijalankan, didapat hasil peluang sebesar ```0.1024```  <br />
-  ![image](https://user-images.githubusercontent.com/90106865/194834926-626ae297-18bc-48a5-9280-e46afa8003ff.png)
+  ![image](https://user-images.githubusercontent.com/90106865/194834926-626ae297-18bc-48a5-9280-e46afa8003ff.png)<br />
+  Setelah dijalankan, didapat hasil peluang sebesar ```0.1024```
 * **Mean Distribusi Geometrik dengan 10000 data random , prob = 0.20 dimana distribusi geometrik acak tersebut X = 3 ( distribusi geometrik acak () == 3 )** <br />
 Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat dicari mean dengan menggunakan fungsi ```rgeom()``` yang parameternya berisi banyaknya data random orang (n), serta peluang kehadiran orang ke acara vaksinasi(p) jika distribusi geometrik acak sama dengan 3.
   ```R
@@ -25,24 +25,31 @@ Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat d
   mean <- mean(rgeom(n, p) == 3)
   paste("Mean =", mean)
   ```
-  Setelah dijalankan, didapat hasil ```0.1011```<br />
-  ![image](https://user-images.githubusercontent.com/90106865/194834985-e8cbb3f9-2e17-4b9a-b24b-30ba6c84c515.png)
+  ![image](https://user-images.githubusercontent.com/90106865/194834985-e8cbb3f9-2e17-4b9a-b24b-30ba6c84c515.png)<br />
+  Setelah dijalankan, didapat hasil ```0.1011```
 * **Bandingkan Hasil poin a dan b , apa kesimpulan yang bisa didapatkan?**<br />
-Ditinjau dari hasil dari poin a dan b yang berbeda, dapat disimpulkan bahwa pada poin a, jika dilakukan pengujian berulang kali dengan menggunakan distribusi geometrik akan tetap menghasilkan nilai yang sama untuk setiap pengulangannya, yaitu ```0.1024```. Hal ini dikarenakan nilai distribusi geometrik yang digunakan adalah nilai tetap dan tidak random/diacak. Sedangkan pada poin B jika dilakukan pengujian berulang kali, akan didapatkan hasil yang berubah-ubah seperti pada gambar di bawah ini<br />
-```percobaan 1```<br />
-![image](https://user-images.githubusercontent.com/90106865/194835046-4a8695ec-f04e-4569-ae7c-91d3b9569222.png)<br />
-```percobaan 2```<br />
-![image](https://user-images.githubusercontent.com/90106865/194835184-d05d53e6-0e96-42b1-9f1d-31f58ea16091.png)<br />
-  Fungsi ```dgeom()``` akan mengembalikan nilai, sedangkan fungsi ```rgeom()``` akan menghasilkan vektor variabel acak (rata-rata dari semua peluang yang dapat terjadi pada suatu kejadian) yang akan mengembalikan nilai yang berbeda-beda.
+  Ditinjau dari hasil dari poin a dan b yang berbeda, dapat disimpulkan bahwa pada poin a, jika dilakukan pengujian       berulang kali dengan menggunakan distribusi geometrik akan tetap menghasilkan nilai yang sama untuk setiap pengulangannya, yaitu ```0.1024```. Hal ini dikarenakan nilai distribusi geometrik yang digunakan adalah nilai tetap dan tidak random/diacak. Sedangkan pada poin B jika dilakukan pengujian berulang kali, akan didapatkan hasil yang berubah-ubah seperti pada gambar di bawah ini<br />
+  ```percobaan 1```<br />
+  ![image](https://user-images.githubusercontent.com/90106865/194835046-4a8695ec-f04e-4569-ae7c-91d3b9569222.png)<br />
+  ```percobaan 2```<br />
+  ![image](https://user-images.githubusercontent.com/90106865/194835184-d05d53e6-0e96-42b1-9f1d-31f58ea16091.png)<br />
+   Fungsi ```dgeom()``` akan mengembalikan nilai, sedangkan fungsi ```rgeom()``` akan menghasilkan vektor variabel acak      (rata-rata dari semua peluang yang dapat terjadi pada suatu kejadian) yang akan mengembalikan nilai yang berbeda-beda.
 
-* **Histogram Distribusi Geometrik , Peluang X = 3 gagal Sebelum Sukses Pertama**
-skip
+* **Histogram Distribusi Geometrik , Peluang X = 3 gagal Sebelum Sukses Pertama**<br />
+  Histogram dari Distribusi Geometrik dapat dibuat menggunakan fungsi ```hist()``` dan ```rgeom()``` yang berisi parameter n dan p.<br />
 
+  Code: <br />
+  ```R
+  n = 10000
+  hist(rgeom(n, p), main = 'Histogram Distribusi Geometrik')
+  ```
+  Output: <br />
+  ![image](https://user-images.githubusercontent.com/90106865/194901230-1b328617-3468-4e95-bdd5-3d58fa403c39.png)
 * **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Geometrik**<br />
-Rumus yang digunakan untuk mencari rataan dari Distribusi Geometrik<br />
-```rataan = 1 / p```<br />
-Rumus yang digunakan untuk mencari varian dari Distribusi Geometrik<br />
-```varian = (1 - p) / (p ^ 2)```<br />
+  Rumus yang digunakan untuk mencari rataan dari Distribusi Geometrik<br />
+  ```rataan = 1 / p```<br />
+  Rumus yang digunakan untuk mencari varian dari Distribusi Geometrik<br />
+  ```varian = (1 - p) / (p ^ 2)```<br />
 
   Code:<br />
   ```R
@@ -74,8 +81,17 @@ Rumus yang digunakan untuk mencari varian dari Distribusi Geometrik<br />
   Output: <br />
   ![image](https://user-images.githubusercontent.com/90106865/194835931-275a2f43-e601-4675-9101-05e9f293a3e2.png)<br />
   didapatkan peluang terdapat 4 pasien yang sembuh adalah ```0.2181994```
-* **Gambarkan grafik histogram berdasarkan kasus tersebut** skip
-
+* **Gambarkan grafik histogram berdasarkan kasus tersebut**
+  Histogram dari Distribusi Binomial dapat dibuat menggunakan fungsi ```hist()``` dan ```rbinom()``` yang berisi parameter x, n, dan p.<br />
+  
+  Code: <br />
+  ```R
+  interval = 1:20
+  plot(dbinom(interval, n, p), main = "Histogram Distribusi Binomial", type = 'h')
+  ```
+  Output: <br />
+  ![image](https://user-images.githubusercontent.com/90106865/194908502-e289a897-86f2-433c-a65e-0066089e5123.png)
+  
 * **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Binomial**<br />
   Rumus yang digunakan untuk mencari rataan dari Distribusi Binomial<br />
   ```rataan = n * p```<br />
@@ -115,10 +131,20 @@ Diketahui bahwa terdapat ```x = 6``` bayi, rata-rata terjadinya kelahiran dapat 
 
 * **Simulasikan dan buatlah histogram kelahiran 6 bayi akan lahir di rumah sakit ini
 selama setahun (n = 365)**
-skip
+  Histogram Distribusi Possion dapat dibuat menggunakan fungsi ```hist()``` dan ```rpois()``` yang berisi parameter n dan lambda.<br />
 
-* **Bandingkan hasil poin a dan b , Apa kesimpulan yang bisa didapatkan**
-skip
+  Code: <br />
+  ```R
+  n = 365
+  hist(rpois(n, lambda), type = "h")
+  mean(rpois(n, lambda)==6)
+  ```
+  Output: <br />
+  ![image](https://user-images.githubusercontent.com/90106865/194914995-05b29b5d-a3ba-4bda-a0b9-da02e3e03a1b.png)
+  dan didapatkan hasil peluang kelahiran 6 bayi dalam setahun ```0.1342466```
+
+* **Bandingkan hasil poin a dan b , Apa kesimpulan yang bisa didapatkan**<br />
+  Pada poin A, nilai ```0.1281201``` didapatkan menggunakan perhitungan eksakta dan menghasilkan nilai yang sama. Sedangkan pada poin B ```0.1342466``` didapatkan dari hasil simulasi peluang kelahiran 6 bayi selama setahun, dan memungkinkan untuk mengembalikan nilai yang berbeda-beda ditiap pengujiannya. Namun dapat disimpulkan bahwa nilai yang didapat pada poin A dan B hampir sama, karena hasil poin A sendiri didapat dari range nilai poin B.
 
 * **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Poisson**<br />
   Pada Distribusi Poisson nilai rataan dan varian sama dengan nilai lambda atau rata-rata historis terjadinya kelahiran 
@@ -131,7 +157,7 @@ skip
   ```
   Output: <br />
   ![image](https://user-images.githubusercontent.com/90106865/194836493-9fd8c901-d787-4210-b99e-595658331f3e.png)<br />
-  didapatkan mean/rataan dan varian ```4.5```
+  didapatkan mean/rataan ```4.5``` dan varian ```4.5```
 
 ## No 4
 >**Diketahui nilai x = 2 dan v = 10. Tentukan:**<br />
@@ -149,8 +175,16 @@ Mencari fungsi probabilitas dari Distribusi Chi-Square dilakukan dengan mengguna
   ![image](https://user-images.githubusercontent.com/90106865/194837182-03754f25-df09-4a4c-b78f-b04c73ee1ec2.png)<br />
   didapatkan hasil ```0.00766```
  
-* **Histogram dari Distribusi Chi-Square dengan 100 data random.**
-skip
+* **Histogram dari Distribusi Chi-Square dengan 100 data random.**<br />
+  Diketahui sebanyak ```n = 100```data random digunakan untuk membuat histogram Distribusi Chi-Square, dengan menggunakan fungsi ```hist()``` dan ```rchisq()``` yang berisi parameter n dan v.
+
+  Code: <br />
+  ```R
+  n = 100
+  hist(rchisq(n, v), main = "Histogram Chi-square")
+  ```
+  Output: <br />
+  ![image](https://user-images.githubusercontent.com/90106865/194916902-7ea4cd21-88bb-4178-a86d-c0cca29f8b82.png)
 
 * **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Chi-Square.**
   Rumus yang digunakan untuk mencari rataan dari Distribusi Binomial<br />
@@ -172,13 +206,13 @@ skip
  
 ## No 5
 >**Diketahui bilangan acak (random variable) berdistribusi exponential (λ = 3). Tentukan:**<br /> Petunjuk: <br />- Gunakan set.seed(1) <br /> - Gunakan fungsi bawaan R<br />
-* **Fungsi Probabilitas dari Distribusi Exponensial**
+* **Fungsi Probabilitas dari Distribusi Exponensial**<br />
 Mencari fungsi probabilitas dari Distribusi Exponensial dilakukan dengan menggunakan fungsi ```dexp()``` dan menggunakan ```set.seed()``` agar bilangan acak yang diperoleh akan sama persis pada setiap pemanggilan fungsi ```rnorm()```.
 
-Code: <br />
-```R
+  Code: <br />
+  ```R
 
-```
+  ```
 * **Histogram dari Distribusi Exponensial untuk 10, 100, 1000 dan 10000 bilangan
 random**
 * **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Exponensial untuk n = 100 dan λ =
