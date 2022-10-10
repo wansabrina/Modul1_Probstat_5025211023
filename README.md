@@ -17,6 +17,6 @@ Dengan metode distribusi Geometrik, dapat menggunakan fungsi yang telah disediak
   P <- dgeom(x, p)
   P
   ``` 
-  Setelah dijalankan, didapat hasil peluang sebesar ```0.1024```
-  
+  Setelah dijalankan, didapat hasil peluang sebesar ```0.1024```  <br />
+
 
