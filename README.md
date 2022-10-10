@@ -172,7 +172,7 @@ skip
 ## No 5
 >**Diketahui bilangan acak (random variable) berdistribusi exponential (λ = 3). Tentukan:**<br /> Petunjuk: <br />- Gunakan set.seed(1) <br /> - Gunakan fungsi bawaan R<br />
 * **Fungsi Probabilitas dari Distribusi Exponensial**
-Mencari fungsi probabilitas dari Distribusi Exponensial dilakukan dengan menggunakan fungsi ```dexp()``` dan menggunakan ```set.seed()``` agar bilangan acak yang diperoleh akan sama persis pada setiap oemanggilan fungsi ```rnorm()```.
+Mencari fungsi probabilitas dari Distribusi Exponensial dilakukan dengan menggunakan fungsi ```dexp()``` dan menggunakan ```set.seed()``` agar bilangan acak yang diperoleh akan sama persis pada setiap pemanggilan fungsi ```rnorm()```.
 
 Code: <br />
 ```R
