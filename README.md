@@ -169,3 +169,19 @@ skip
   ![image](https://user-images.githubusercontent.com/90106865/194837654-c4feaccf-4d47-4a7f-a5f2-b0070875d68a.png)<br />
   didapatkan mean atau rataan ```10``` dan varian ```20```
  
+## No 5
+>**Diketahui bilangan acak (random variable) berdistribusi exponential (λ = 3). Tentukan:**<br />
+Petunjuk: 
+  * Gunakan set.seed(1)
+  * Gunakan fungsi bawaan R<br />
+* **Fungsi Probabilitas dari Distribusi Exponensial**
+Mencari fungsi probabilitas dari Distribusi Exponensial dilakukan dengan menggunakan fungsi ```dexp()`` dan menggunakan ```set.seed()``` agar bilangan acak yang diperoleh akan sama persis pada setiap oemanggilan fungsi ```rnorm()```.
+
+Code: <br />
+```R
+
+```
+* **Histogram dari Distribusi Exponensial untuk 10, 100, 1000 dan 10000 bilangan
+random**
+* **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Exponensial untuk n = 100 dan λ =
+3**<br />
