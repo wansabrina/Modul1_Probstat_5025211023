@@ -147,7 +147,8 @@ Mencari fungsi probabilitas dari Distribusi Chi-Square dilakukan dengan mengguna
   ```
   Output: <br />
   ![image](https://user-images.githubusercontent.com/90106865/194837182-03754f25-df09-4a4c-b78f-b04c73ee1ec2.png)<br />
-  
+  didapatkan hasil ```0.00766```
+ 
 * **Histogram dari Distribusi Chi-Square dengan 100 data random.**
 skip
 
@@ -182,3 +183,18 @@ Code: <br />
 random**
 * **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Exponensial untuk n = 100 dan λ =
 3**<br />
+
+## No 6
+>**Diketahui generate random nilai sebanyak 100 data, mean = 50, sd = 8. Tentukan:**<br />
+* **Fungsi Probabilitas dari Distribusi Normal P(X1 ≤ x ≤ X2), hitung Z-Score Nya dan plot data generate randomnya dalam bentuk grafik. Petunjuk(gunakan fungsi plot()).**<br />
+Keterangan :<br />
+X1 = Dibawah rata-rata<br />
+X2 = Diatas rata-rata<br />
+Contoh data :<br />
+1, 2, 4, 2, 6, 3, 10, 11, 5, 3, 6, 8<br />
+rata-rata = 5.083333<br />
+X1 = 5<br />
+X2 = 6<br />
+* **Generate Histogram dari Distribusi Normal dengan breaks 50 dan format penamaan: NRP_Nama_Probstat_{Nama Kelas}_DNhistogram**
+
+* **Nilai Varian (σ²) dari hasil generate random nilai Distribusi Normal**
