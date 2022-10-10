@@ -19,7 +19,7 @@ Dengan metode distribusi Geometrik, dapat menggunakan fungsi yang telah disediak
   ![image](https://user-images.githubusercontent.com/90106865/194834926-626ae297-18bc-48a5-9280-e46afa8003ff.png)<br />
   Setelah dijalankan, didapat hasil peluang sebesar ```0.1024```
 * **Mean Distribusi Geometrik dengan 10000 data random , prob = 0.20 dimana distribusi geometrik acak tersebut X = 3 ( distribusi geometrik acak () == 3 )** <br />
-Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat dicari mean dengan menggunakan fungsi ```rgeom()``` yang parameternya berisi banyaknya data random orang (n), serta peluang kehadiran orang ke acara vaksinasi(p) jika distribusi geometrik acak sama dengan 3.
+Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat dicari mean dengan menggunakan fungsi ```rgeom()``` yang parameternya berisi banyaknya data random orang (n), serta peluang kehadiran orang ke acara vaksinasi (p) jika distribusi geometrik acak sama dengan 3.
   ```R
   n = 10000
   mean <- mean(rgeom(n, p) == 3)
@@ -81,7 +81,7 @@ Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat d
   Output: <br />
   ![image](https://user-images.githubusercontent.com/90106865/194835931-275a2f43-e601-4675-9101-05e9f293a3e2.png)<br />
   didapatkan peluang terdapat 4 pasien yang sembuh adalah ```0.2181994```
-* **Gambarkan grafik histogram berdasarkan kasus tersebut**
+* **Gambarkan grafik histogram berdasarkan kasus tersebut**<br />
   Histogram dari Distribusi Binomial dapat dibuat menggunakan fungsi ```hist()``` dan ```rbinom()``` yang berisi parameter x, n, dan p.<br />
   
   Code: <br />
@@ -130,8 +130,8 @@ Diketahui bahwa terdapat ```x = 6``` bayi, rata-rata terjadinya kelahiran dapat 
   didapatkan hasil ```0.1281201```
 
 * **Simulasikan dan buatlah histogram kelahiran 6 bayi akan lahir di rumah sakit ini
-selama setahun (n = 365)**
-  Histogram Distribusi Possion dapat dibuat menggunakan fungsi ```hist()``` dan ```rpois()``` yang berisi parameter n dan lambda.<br />
+selama setahun (n = 365)**<br />
+  Histogram Distribusi Poisson dapat dibuat menggunakan fungsi ```hist()``` dan ```rpois()``` yang berisi parameter n dan lambda.<br />
 
   Code: <br />
   ```R
@@ -140,11 +140,11 @@ selama setahun (n = 365)**
   mean(rpois(n, lambda)==6)
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/194914995-05b29b5d-a3ba-4bda-a0b9-da02e3e03a1b.png)
+  ![image](https://user-images.githubusercontent.com/90106865/194914995-05b29b5d-a3ba-4bda-a0b9-da02e3e03a1b.png)<br />
   dan didapatkan hasil peluang kelahiran 6 bayi dalam setahun ```0.1342466```
 
 * **Bandingkan hasil poin a dan b , Apa kesimpulan yang bisa didapatkan**<br />
-  Pada poin A, nilai ```0.1281201``` didapatkan menggunakan perhitungan eksakta dan menghasilkan nilai yang sama. Sedangkan pada poin B ```0.1342466``` didapatkan dari hasil simulasi peluang kelahiran 6 bayi selama setahun, dan memungkinkan untuk mengembalikan nilai yang berbeda-beda ditiap pengujiannya. Namun dapat disimpulkan bahwa nilai yang didapat pada poin A dan B hampir sama, karena hasil poin A sendiri didapat dari range nilai poin B.
+  Pada poin A, nilai ```0.1281201``` didapatkan menggunakan perhitungan eksakta dan menghasilkan nilai yang sama. Sedangkan pada poin B ```0.1342466``` didapatkan dari hasil simulasi peluang kelahiran 6 bayi selama setahun, dan memungkinkan untuk mengembalikan nilai yang berbeda-beda ditiap pengujiannya. Namun dapat disimpulkan bahwa nilai yang didapat pada poin A dan B hampir sama, karena hasil poin A sendiri juga terdapat di range hasil poin B.
 
 * **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Poisson**<br />
   Pada Distribusi Poisson nilai rataan dan varian sama dengan nilai lambda atau rata-rata historis terjadinya kelahiran 
@@ -161,8 +161,8 @@ selama setahun (n = 365)**
 
 ## No 4
 >**Diketahui nilai x = 2 dan v = 10. Tentukan:**<br />
-* **Fungsi Probabilitas dari Distribusi Chi-Square**
-Mencari fungsi probabilitas dari Distribusi Chi-Square dilakukan dengan menggunakan fungsi dchisq(). Dengan parameter x dan v.<br />
+* **Fungsi Probabilitas dari Distribusi Chi-Square**<br />
+Mencari fungsi probabilitas dari Distribusi Chi-Square dilakukan dengan menggunakan fungsi ```dchisq()``` dengan parameter x dan v.<br />
   Code:<br />
   ```R
   x = 2
@@ -176,7 +176,7 @@ Mencari fungsi probabilitas dari Distribusi Chi-Square dilakukan dengan mengguna
   didapatkan hasil ```0.00766```
  
 * **Histogram dari Distribusi Chi-Square dengan 100 data random.**<br />
-  Diketahui sebanyak ```n = 100```data random digunakan untuk membuat histogram Distribusi Chi-Square, dengan menggunakan fungsi ```hist()``` dan ```rchisq()``` yang berisi parameter n dan v.
+  Diketahui sebanyak ```n = 100``` data random digunakan untuk membuat histogram Distribusi Chi-Square, dengan menggunakan fungsi ```hist()``` dan ```rchisq()``` yang berisi parameter n dan v.
 
   Code: <br />
   ```R
@@ -186,7 +186,7 @@ Mencari fungsi probabilitas dari Distribusi Chi-Square dilakukan dengan mengguna
   Output: <br />
   ![image](https://user-images.githubusercontent.com/90106865/194916902-7ea4cd21-88bb-4178-a86d-c0cca29f8b82.png)
 
-* **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Chi-Square.**
+* **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Chi-Square.**<br />
   Rumus yang digunakan untuk mencari rataan dari Distribusi Binomial<br />
   ```rataan = v```<br />
   Rumus yang digunakan untuk mencari varian dari Distribusi Binomial<br />
@@ -214,7 +214,7 @@ Mencari fungsi probabilitas dari Distribusi Exponensial dilakukan dengan menggun
 
   ```
 * **Histogram dari Distribusi Exponensial untuk 10, 100, 1000 dan 10000 bilangan
-random**
+random**<br />
 * **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Exponensial untuk n = 100 dan λ =
 3**<br />
 
@@ -229,6 +229,6 @@ Contoh data :<br />
 rata-rata = 5.083333<br />
 X1 = 5<br />
 X2 = 6<br />
-* **Generate Histogram dari Distribusi Normal dengan breaks 50 dan format penamaan: NRP_Nama_Probstat_{Nama Kelas}_DNhistogram**
+* **Generate Histogram dari Distribusi Normal dengan breaks 50 dan format penamaan: NRP_Nama_Probstat_{Nama Kelas}_DNhistogram**<br />
 
-* **Nilai Varian (σ²) dari hasil generate random nilai Distribusi Normal**
+* **Nilai Varian (σ²) dari hasil generate random nilai Distribusi Normal**<br />
