@@ -211,12 +211,49 @@ Mencari fungsi probabilitas dari Distribusi Exponensial dilakukan dengan menggun
 
   Code: <br />
   ```R
+  lambda = 3
 
+  exp_dist <- dexp(lambda)
+  paste("Peluang =", exp_dist)
   ```
+  Output: <br />
+  ![image](https://user-images.githubusercontent.com/90106865/195168087-497b4f43-2f1e-49fa-b0ff-9e2d1fc7a921.png)<br />
+  didapatkan nilai ```0.49787```
 * **Histogram dari Distribusi Exponensial untuk 10, 100, 1000 dan 10000 bilangan
 random**<br />
+Histogram Distribusi Exponensial dapat dibuat menggunakan fungsi ```hist()``` dan ```rexp```<br />
+  Code: <br />
+  ```R
+  lambda = 3
+
+  set.seed(1)
+  hist(rexp(n = 10, lambda), main = "Histogram Exp Dist 10 bil random")
+  hist(rexp(n = 100, lambda), main = "Histogram Exp Dist 100 bil random")
+  hist(rexp(n = 1000, lambda), main = "Histogram Exp Dist 1000 bil random")
+  hist(rexp(n = 10000, lambda), main = "Histogram Exp Dist 10000 bil random")
+  ```
+  Output:<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195171173-e19c68ac-e071-4431-965b-5dcd4b02a458.png)<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195171808-d0a28ec7-91ce-45b0-85c1-a9e701ae1271.png)<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195171855-bc0361ac-3815-469f-b8e9-14f8fa67ef36.png)<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195172178-c7469ea9-0f37-4c12-aadc-9f1284c2eb77.png)<br />
 * **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Exponensial untuk n = 100 dan λ =
 3**<br />
+Untuk mencari Rataan dapat menggunakan fungsi ```mean()``` dan ```rexp()``` yang berisi parameter n, dan lambda. Dan untuk mencari Varian dapat menggunakan fungsi ```sd()``` dan ```rexp()``` yang berisi parameter n, dan lambda.<br />
+  Code: <br />
+  ```R
+  N = 100
+
+  set.seed(1)
+  rataan = mean(rexp(N, lambda))
+  paste("Rataan =", rataan)
+
+  varian = sd(rexp(N, lambda))
+  paste("Varian =", varian)
+  ```
+  Output: <br />
+  ![image](https://user-images.githubusercontent.com/90106865/195173348-0762fba0-cbfb-4012-84a0-f89186f7dcd5.png)<br />
+  didapatkan mean atau rataan ```0.34355``` dan varian ```0.06561```
 
 ## No 6
 >**Diketahui generate random nilai sebanyak 100 data, mean = 50, sd = 8. Tentukan:**<br />
@@ -229,6 +266,51 @@ Contoh data :<br />
 rata-rata = 5.083333<br />
 X1 = 5<br />
 X2 = 6<br />
-* **Generate Histogram dari Distribusi Normal dengan breaks 50 dan format penamaan: NRP_Nama_Probstat_{Nama Kelas}_DNhistogram**<br />
 
+  Untuk menghitung Z-Score, saat generate 100 nilai random dapat menggunakan fungsi ```rnorm()``` dengan parameter n, mean, dan sd. Lalu mencari mean dari 100 nilai random menggunakan ```mean()``` dengan parameter data. Setelah itu menentukan X1 dan X2 sebagai range peluang dengan menggunakan fungsi ```floor()``` untuk mencari X1, dan mencari nilai setelahnya dengan ```+1``` untuk X2. Untuk mencari zScore atau skor standar, dapat menggunakan rumus sebagai berikut: <br />
+  
+  ```Z = (x - mean) / sd)```<br />
+  
+  Dengan ```x = observed value```. Dan untuk membentuk grafik data generate random, dapat menggunakan fungsi ```plot()```<br />
+  
+  Code:<br />
+  ```R
+  n = 100
+  mean = 50
+  sd = 8
+
+  set.seed(1)
+  x = rnorm(n, mean, sd)
+  mean_data = mean(x)
+
+  X1 = floor(mean_data)
+  X2 = floor(mean_data) + 1
+
+  zScore = (x - mean) / sd
+  zScore
+
+  plot(zScore)
+  ```
+  Output: <br/ >
+  ![image](https://user-images.githubusercontent.com/90106865/195179984-73db0f5c-ffec-4e29-a5df-56975d473c5d.png)<br />
+
+  Grafik plot:<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195180079-5c9d520e-0e78-4b19-a12e-b96ca3ed0412.png)
+
+* **Generate Histogram dari Distribusi Normal dengan breaks 50 dan format penamaan:** <br />
+  Histogram Distribusi Normal dapat dibuat menggunakan fungsi ```hist()``` dengan parameter x dan breaks.<br />
+  Code:<br />
+  ```R
+  breaks = 50
+  hist(x, breaks, main = "5025211023_Wan Sabrina Mayzura_Probstat_A_DNhistogram")
+  ```
+  Output:<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195181142-0a054b4c-026d-4e72-aa89-b446e4fc7928.png)
+  
 * **Nilai Varian (σ²) dari hasil generate random nilai Distribusi Normal**<br />
+
+  Code: <br />
+  
+  Output: <br />
+  <br />
+  didapatkan varian ```0```
