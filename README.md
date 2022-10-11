@@ -291,7 +291,7 @@ X2 = 6<br />
 
   plot(zScore)
   ```
-  Output: <br/ >
+  Output: <br />
   ![image](https://user-images.githubusercontent.com/90106865/195179984-73db0f5c-ffec-4e29-a5df-56975d473c5d.png)<br />
 
   Grafik plot:<br />
