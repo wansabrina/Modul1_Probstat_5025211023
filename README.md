@@ -137,10 +137,10 @@ selama setahun (n = 365)**<br />
   Code: <br />
   ```R
   n = 365
-  hist(rpois(n, lambda))
+  hist(rpois(n, lambda), main = "Histogram Distribusi Poisson")
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/194914995-05b29b5d-a3ba-4bda-a0b9-da02e3e03a1b.png)<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195324212-1c40f91d-4245-4555-894f-f8996c6c8c66.png)<br />
 
 * **Bandingkan hasil poin a dan b , Apa kesimpulan yang bisa didapatkan**<br />
   Pada poin A, nilai ```0.12812``` didapatkan menggunakan perhitungan eksakta dan menghasilkan nilai yang sama. Sedangkan pada poin B didapatkan dari hasil simulasi peluang acak kelahiran 6 bayi selama setahun, dan memungkinkan untuk mengembalikan nilai yang berbeda-beda ditiap pengujiannya. Namun dapat disimpulkan bahwa nilai yang didapat pada poin A dan B hampir sama, karena hasil poin A sendiri juga terdapat di range hasil poin B.
@@ -180,10 +180,10 @@ Mencari fungsi probabilitas dari Distribusi Chi-Square dilakukan dengan mengguna
   Code: <br />
   ```R
   n = 100
-  hist(rchisq(n, v), main = "Histogram Chi-square")
+  hist(rchisq(n, v), main = "Histogram Distribusi Chi-square")
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/194916902-7ea4cd21-88bb-4178-a86d-c0cca29f8b82.png)
+  ![image](https://user-images.githubusercontent.com/90106865/195324456-e3f59223-dc66-4803-a993-cc0c77945145.png)
 
 * **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Chi-Square.**<br />
   Rumus yang digunakan untuk mencari rataan dari Distribusi Binomial<br />
@@ -294,14 +294,14 @@ X2 = 6<br />
   zScore = (x - mean_data) / sd(data)
   print("Z-Score:")
   zScore
-  plot(zScore)
+  plot(zScore, main = "Plot Z-Score")
   ```
   Output: <br />
   ![image](https://user-images.githubusercontent.com/90106865/195320943-0698c939-b53f-42ba-bbe6-f18feb04237b.png)<br />
   didapatkan P(X1 ≤ x ≤ X2) = ```0.04973```
 
   Grafik plot:<br />
-  ![image](https://user-images.githubusercontent.com/90106865/195300242-559a7356-23f8-4491-ae03-3301ed1a1e82.png)
+  ![image](https://user-images.githubusercontent.com/90106865/195324775-40c8b67c-f7b8-45cd-95a4-3aea68f0fea5.png)
 
 * **Generate Histogram dari Distribusi Normal dengan breaks 50 dan format penamaan:** <br />
   Histogram Distribusi Normal dapat dibuat menggunakan fungsi ```hist()``` dengan parameter x dan breaks.<br />
