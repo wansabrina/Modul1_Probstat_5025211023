@@ -53,7 +53,7 @@ paste("Peluang =", pois_dist)
 
 #No 3B
 n = 365
-hist(rpois(n, lambda))
+hist(rpois(n, lambda), main = "Histogram Distribusi Poisson")
 
 #No 3C
 #Penjelasan di file README.MD
@@ -73,7 +73,7 @@ paste("Peluang =", chisq_dist)
 
 #No 4B
 n = 100
-hist(rchisq(n, v), main = "Histogram Chi-square")
+hist(rchisq(n, v), main = "Histogram Distribusi Chi-square")
 
 #No 4C
 rataan = v
@@ -128,7 +128,7 @@ paste("P(X1 ≤ x ≤ X2) =", P)
 zScore = (x - mean_data) / sd(data)
 print("Z-Score:")
 zScore
-plot(zScore)
+plot(zScore, main = "Plot Z-Score")
 
 #No 6B
 breaks = 50
