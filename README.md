@@ -40,7 +40,7 @@ Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat d
 * **Histogram Distribusi Geometrik , Peluang X = 3 gagal Sebelum Sukses Pertama**<br />
   Histogram dari Distribusi Geometrik dapat dibuat menggunakan fungsi ```hist()``` dan ```rgeom()``` yang berisi parameter n dan prob = p.<br />
 
-  Code: <br />
+  Code:<br />
   ```R
   n = 10000
   hist(rgeom(n, p), main = 'Histogram Distribusi Geometrik')
