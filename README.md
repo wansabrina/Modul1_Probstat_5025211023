@@ -28,7 +28,7 @@ Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat d
   ![image](https://user-images.githubusercontent.com/90106865/194834985-e8cbb3f9-2e17-4b9a-b24b-30ba6c84c515.png)<br />
   Setelah dijalankan, didapat hasil ```0.1011```
 * **Bandingkan Hasil poin a dan b , apa kesimpulan yang bisa didapatkan?**<br />
-  Ditinjau dari hasil dari poin a dan b yang berbeda, dapat disimpulkan bahwa pada poin a, jika dilakukan pengujian       berulang kali dengan menggunakan distribusi geometrik akan tetap menghasilkan nilai yang sama untuk setiap pengulangannya, yaitu ```0.1024```. Hal ini dikarenakan nilai distribusi geometrik yang digunakan adalah nilai tetap dan tidak random/diacak. Sedangkan pada poin B jika dilakukan pengujian berulang kali, akan didapatkan hasil yang berubah-ubah seperti pada gambar di bawah ini<br />
+  Ditinjau dari hasil dari poin a dan b yang berbeda namun tidak terpaut jauh jarak nilainya. Dapat disimpulkan bahwa pada poin a, jika dilakukan pengujian berulang kali dengan menggunakan distribusi geometrik akan tetap menghasilkan nilai yang sama untuk setiap pengulangannya, yaitu ```0.1024```. Hal ini dikarenakan nilai distribusi geometrik yang digunakan adalah nilai tetap dan tidak random/diacak. Sedangkan pada poin B jika dilakukan pengujian berulang kali, akan didapatkan hasil yang berubah-ubah seperti pada gambar di bawah ini<br />
   ```percobaan 1```<br />
   ![image](https://user-images.githubusercontent.com/90106865/194835046-4a8695ec-f04e-4569-ae7c-91d3b9569222.png)<br />
   ```percobaan 2```<br />
