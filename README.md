@@ -19,7 +19,7 @@ Dengan metode distribusi Geometrik, dapat menggunakan fungsi yang telah disediak
   ![image](https://user-images.githubusercontent.com/90106865/194834926-626ae297-18bc-48a5-9280-e46afa8003ff.png)<br />
   Setelah dijalankan, didapat hasil peluang sebesar ```0.1024```
 * **Mean Distribusi Geometrik dengan 10000 data random , prob = 0.20 dimana distribusi geometrik acak tersebut X = 3 ( distribusi geometrik acak () == 3 )** <br />
-Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat dicari mean dengan menggunakan fungsi ```rgeom()``` yang parameternya berisi banyaknya data random orang (n), serta peluang kehadiran orang ke acara vaksinasi (p) jika distribusi geometrik acak sama dengan 3.
+Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat dicari mean dengan menggunakan fungsi ```rgeom()``` yang parameternya berisi banyaknya data random orang (n), serta peluang kehadiran orang ke acara vaksinasi (p).
   ```R
   n = 10000
   mean <- mean(rgeom(n, p) == 3)
@@ -82,7 +82,7 @@ Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat d
   ![image](https://user-images.githubusercontent.com/90106865/194835931-275a2f43-e601-4675-9101-05e9f293a3e2.png)<br />
   didapatkan peluang terdapat 4 pasien yang sembuh adalah ```0.2181994```
 * **Gambarkan grafik histogram berdasarkan kasus tersebut**<br />
-  Histogram dari Distribusi Binomial dapat dibuat menggunakan fungsi ```hist()``` dan ```rbinom()``` yang berisi parameter x, n, dan p.<br />
+  Histogram dari Distribusi Binomial dapat dibuat menggunakan fungsi ```plot()``` dan ```dbinom()``` yang berisi parameter interval (dalam kasus ini 1 : 20), n, dan p.<br />
   
   Code: <br />
   ```R
@@ -248,11 +248,11 @@ Untuk mencari Rataan dapat menggunakan fungsi ```mean()``` dan ```rexp()``` yang
   rataan = mean(rexp(N, lambda))
   paste("Rataan =", rataan)
 
-  varian = sd(rexp(N, lambda))
+  varian = sd(rexp(N, lambda))^2
   paste("Varian =", varian)
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/195173348-0762fba0-cbfb-4012-84a0-f89186f7dcd5.png)<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195274936-8b66dbc0-0a46-405e-9042-ca66d883db2b.png)<br />
   didapatkan mean atau rataan ```0.34355``` dan varian ```0.06561```
 
 ## No 6
@@ -267,7 +267,7 @@ rata-rata = 5.083333<br />
 X1 = 5<br />
 X2 = 6<br />
 
-  Untuk menghitung Z-Score, saat generate 100 nilai random dapat menggunakan fungsi ```rnorm()``` dengan parameter n, mean, dan sd. Lalu mencari mean dari 100 nilai random menggunakan ```mean()``` dengan parameter data. Setelah itu menentukan X1 dan X2 sebagai range peluang dengan menggunakan fungsi ```floor()``` untuk mencari X1, dan mencari nilai setelahnya dengan ```+1``` untuk X2. Untuk mencari zScore atau skor standar, dapat menggunakan rumus sebagai berikut: <br />
+  Untuk menghitung Z-Score, saat generate 100 nilai random dapat menggunakan fungsi ```rnorm()``` dengan parameter n, mean, dan sd. Lalu mencari mean dari 100 nilai random menggunakan ```mean()``` dengan parameter data. Setelah itu menentukan X1 dan X2 sebagai range peluang dengan menggunakan fungsi ```floor()``` untuk mencari X1 (batas atas dari mean data), dan mencari nilai setelahnya atau X2 (batas atas mean data) menggunakan fungsi ```ceiling()```. Untuk mencari zScore atau skor standar, dapat menggunakan rumus sebagai berikut: <br />
   
   ```Z = (x - mean) / sd)```<br />
   
@@ -284,7 +284,7 @@ X2 = 6<br />
   mean_data = mean(x)
 
   X1 = floor(mean_data)
-  X2 = floor(mean_data) + 1
+  X2 = ceiling(mean_data)
 
   zScore = (x - mean) / sd
   zScore
@@ -292,7 +292,7 @@ X2 = 6<br />
   plot(zScore)
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/195179984-73db0f5c-ffec-4e29-a5df-56975d473c5d.png)<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195280798-2374358c-a87d-4b56-a621-463330626295.png)<br />
 
   Grafik plot:<br />
   ![image](https://user-images.githubusercontent.com/90106865/195180079-5c9d520e-0e78-4b19-a12e-b96ca3ed0412.png)
