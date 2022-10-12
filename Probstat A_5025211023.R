@@ -113,7 +113,7 @@ x = rnorm(n, mean, sd)
 mean_data = mean(x)
 
 X1 = floor(mean_data)
-X2 = floor(mean_data) + 1
+X2 = ceiling(mean_data)
 
 zScore = (x - mean) / sd
 zScore
