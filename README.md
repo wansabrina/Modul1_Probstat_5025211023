@@ -1,8 +1,10 @@
 # Modul1_Probstat_5025211023
-## Praktikum Probabilitas dan Statistika Modul 1
-Nama : Wan Sabrina Mayzura <br />
-Nrp : 5025211023 <br />
-Kelas : Probabilitas dan Statistika A
+Praktikum Probabilitas dan Statistika Modul 1
+
+## Identitas
+| Nama                | NRP        | Kelas     |
+| ---                 | ---        | ----------|
+| Wan Sabrina Mayzura | 5025211023 |Probstat A |
 
 ## No 1
 >**Seorang penyurvei secara acak memilih orang-orang di jalan sampai dia bertemu dengan
@@ -80,9 +82,9 @@ Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat d
   ```
   Output: <br />
   ![image](https://user-images.githubusercontent.com/90106865/195310062-720f1782-20d7-4c88-9457-6eb3f06a996b.png)<br />
-  didapatkan peluang terdapat 4 pasien yang sembuh adalah ```0.2181994```
+  didapatkan peluang terdapat 4 pasien yang sembuh adalah ```0.21819```
 * **Gambarkan grafik histogram berdasarkan kasus tersebut**<br />
-  Histogram dari Distribusi Binomial dapat dibuat menggunakan fungsi ```plot()``` dan ```dbinom()``` yang berisi parameter interval (dalam kasus ini 1 : 20), n, dan prob = p.<br />
+  Histogram dari Distribusi Binomial dapat dibuat menggunakan fungsi ```hist()``` dan ```rbinom()``` yang berisi parameter interval x, n, dan prob = p.<br />
   
   Code: <br />
   ```R
@@ -265,7 +267,7 @@ rata-rata = 5.083333<br />
 X1 = 5<br />
 X2 = 6<br />
 
-  Untuk menghitung Z-Score, saat generate 100 nilai random dapat menggunakan fungsi ```rnorm()``` dengan parameter n, mean, dan sd. Lalu mencari mean dari 100 nilai random menggunakan ```mean()``` dengan parameter data. Setelah itu menentukan X1 dan X2 sebagai range peluang dengan menggunakan fungsi ```floor()``` untuk mencari X1 (batas atas dari mean data), dan mencari nilai setelahnya atau X2 (batas atas mean data) menggunakan fungsi ```ceiling()```. Untuk mencari Fungsi Probabilitas dari Distribusi Normal P(X1 ≤ x ≤ X2), dapat mengurangi ```pnorm``` dari x2 dan x1. Dan untuk mencari zScore atau skor standar, dapat menggunakan rumus sebagai berikut: <br />
+  Untuk menghitung Z-Score, saat generate 100 nilai random dapat menggunakan fungsi ```rnorm()``` dengan parameter n, mean, dan sd. Lalu mencari mean dari 100 nilai random menggunakan ```mean()``` dengan parameter x. Setelah itu menentukan X1 dan X2 sebagai range peluang dengan menggunakan fungsi ```floor()``` untuk mencari X1 (batas atas dari mean data), dan mencari nilai setelahnya atau X2 (batas atas mean data) menggunakan fungsi ```ceiling()```. Untuk mencari Fungsi Probabilitas dari Distribusi Normal P(X1 ≤ x ≤ X2), dapat mengurangi ```pnorm()``` dari x2 dan x1. Untuk mencari Z-Score atau skor standar, dapat menggunakan rumus sebagai berikut: <br />
 
   ```Z = (x - mean) / sd)```<br />
   
@@ -282,7 +284,9 @@ X2 = 6<br />
 
   mean_data = mean(x)
   X1 = floor(mean_data)
+  X1
   X2 = ceiling(mean_data)
+  X2
 
   P = pnorm(X2, mean, sd) - pnorm(X1, mean, sd)
   paste("P(X1 ≤ x ≤ X2) =", P)
@@ -293,7 +297,7 @@ X2 = 6<br />
   plot(zScore)
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/195315805-be1e6b2e-ffc1-4a48-a899-ca1f03fcf41d.png)<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195320943-0698c939-b53f-42ba-bbe6-f18feb04237b.png)<br />
   didapatkan P(X1 ≤ x ≤ X2) = ```0.04973```
 
   Grafik plot:<br />
