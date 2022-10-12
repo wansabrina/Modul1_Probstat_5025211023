@@ -308,9 +308,12 @@ X2 = 6<br />
   ![image](https://user-images.githubusercontent.com/90106865/195181142-0a054b4c-026d-4e72-aa89-b446e4fc7928.png)
   
 * **Nilai Varian (σ²) dari hasil generate random nilai Distribusi Normal**<br />
-
+  Karena nilai sd atau standar deviasi sudah diketahui yaitu 8, dan sesuai rumus yang berlaku, varian adalah hasil kuadrat dari standar deviasi.<br /> 
   Code: <br />
-  
+  ```R
+  varian = sd^2
+  paste("Varian =", varian)
+  ```
   Output: <br />
-  <br />
-  didapatkan varian ```0```
+  ![image](https://user-images.githubusercontent.com/90106865/195182425-9fcc1a8e-b70a-488c-aa39-e401ca99f5a9.png)<br />
+  didapatkan varian ```64```.
