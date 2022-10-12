@@ -13,13 +13,13 @@ Dengan metode distribusi Geometrik, dapat menggunakan fungsi yang telah disediak
   ```R
   x = 3
   p = 0.20
-  peluang <- dgeom(x, p)
-  paste("Peluang =", peluang)
+  geom_dist <- dgeom(x, p)
+  paste("Peluang =", geom_dist)
   ``` 
-  ![image](https://user-images.githubusercontent.com/90106865/194834926-626ae297-18bc-48a5-9280-e46afa8003ff.png)<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195309640-ea9844a2-a8ef-493b-a11a-89331e380a06.png)<br />
   Setelah dijalankan, didapat hasil peluang sebesar ```0.1024```
 * **Mean Distribusi Geometrik dengan 10000 data random , prob = 0.20 dimana distribusi geometrik acak tersebut X = 3 ( distribusi geometrik acak () == 3 )** <br />
-Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat dicari mean dengan menggunakan fungsi ```rgeom()``` yang parameternya berisi banyaknya data random orang (n), serta peluang kehadiran orang ke acara vaksinasi (p).
+Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat dicari mean dengan menggunakan fungsi ```rgeom()``` yang parameternya berisi banyaknya data random orang (n), serta peluang kehadiran orang ke acara vaksinasi atau prob (p).
   ```R
   n = 10000
   mean <- mean(rgeom(n, p) == 3)
@@ -36,7 +36,7 @@ Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat d
    Fungsi ```dgeom()``` akan mengembalikan nilai, sedangkan fungsi ```rgeom()``` akan menghasilkan vektor variabel acak      (rata-rata dari semua peluang yang dapat terjadi pada suatu kejadian) yang akan mengembalikan nilai yang berbeda-beda.
 
 * **Histogram Distribusi Geometrik , Peluang X = 3 gagal Sebelum Sukses Pertama**<br />
-  Histogram dari Distribusi Geometrik dapat dibuat menggunakan fungsi ```hist()``` dan ```rgeom()``` yang berisi parameter n dan p.<br />
+  Histogram dari Distribusi Geometrik dapat dibuat menggunakan fungsi ```hist()``` dan ```rgeom()``` yang berisi parameter n dan prob = p.<br />
 
   Code: <br />
   ```R
@@ -67,7 +67,7 @@ Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat d
 >**Terdapat 20 pasien menderita Covid19 dengan peluang sembuh sebesar 0.2. Tentukan :**
   
 * **Peluang terdapat 4 pasien yang sembuh**<br />
- Diketahui bahwa jumlah pasien ```n = 20``` dan peluang sembuh ```p = 0.2```. Untuk mencari peluang ```x = 4``` pasien yang sembuh, dapat menggunakan distribusi binomial dengan fungsi ```dbinom()``` dengan parameter x, n, dan p.<br />
+ Diketahui bahwa jumlah pasien ```n = 20``` dan peluang sembuh ```p = 0.2```. Untuk mencari peluang ```x = 4``` pasien yang sembuh, dapat menggunakan distribusi binomial dengan fungsi ```dbinom()``` dengan parameter x, n, dan prob = p.<br />
  
   Code: <br />
   ```R
@@ -75,22 +75,21 @@ Diketahui bahwa ```n = 10000```, ```prob = p = 0,20```, dan ```X = 3```. Dapat d
   p = 0.2
   x = 4
 
-  peluang <- dbinom(x, n, p, log = FALSE)
-  paste("Peluang =", peluang)
+  binom_dist <- dbinom(x, n, p)
+  paste("Peluang =", binom_dist)
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/194835931-275a2f43-e601-4675-9101-05e9f293a3e2.png)<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195310062-720f1782-20d7-4c88-9457-6eb3f06a996b.png)<br />
   didapatkan peluang terdapat 4 pasien yang sembuh adalah ```0.2181994```
 * **Gambarkan grafik histogram berdasarkan kasus tersebut**<br />
-  Histogram dari Distribusi Binomial dapat dibuat menggunakan fungsi ```plot()``` dan ```dbinom()``` yang berisi parameter interval (dalam kasus ini 1 : 20), n, dan p.<br />
+  Histogram dari Distribusi Binomial dapat dibuat menggunakan fungsi ```plot()``` dan ```dbinom()``` yang berisi parameter interval (dalam kasus ini 1 : 20), n, dan prob = p.<br />
   
   Code: <br />
   ```R
-  interval = 1:20
-  plot(dbinom(interval, n, p), main = "Histogram Distribusi Binomial", type = 'h')
+  hist(rbinom(x, n, p), main = "Histogram Distribusi Binomial")
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/194908502-e289a897-86f2-433c-a65e-0066089e5123.png)
+  ![image](https://user-images.githubusercontent.com/90106865/195304191-9cd0c75b-29cd-42e0-9aa4-d7ebc49cd9b7.png)
   
 * **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Binomial**<br />
   Rumus yang digunakan untuk mencari rataan dari Distribusi Binomial<br />
@@ -122,12 +121,12 @@ Diketahui bahwa terdapat ```x = 6``` bayi, rata-rata terjadinya kelahiran dapat 
   x = 6
   lambda = 4.5
 
-  peluang <- dpois(x, lambda)
-  paste("Peluang =", peluang)
+  pois_dist <- dpois(x, lambda)
+  paste("Peluang =", pois_dist)
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/194836402-109a09a2-4654-48a8-bf12-e797d13a63d3.png)<br />
-  didapatkan hasil ```0.1281201```
+  ![image](https://user-images.githubusercontent.com/90106865/195310281-e39ee937-0d9f-4039-94be-8b15fcc3739f.png)<br />
+  didapatkan hasil ```0.12812```
 
 * **Simulasikan dan buatlah histogram kelahiran 6 bayi akan lahir di rumah sakit ini
 selama setahun (n = 365)**<br />
@@ -136,15 +135,13 @@ selama setahun (n = 365)**<br />
   Code: <br />
   ```R
   n = 365
-  hist(rpois(n, lambda), type = "h")
-  mean(rpois(n, lambda)==6)
+  hist(rpois(n, lambda))
   ```
   Output: <br />
   ![image](https://user-images.githubusercontent.com/90106865/194914995-05b29b5d-a3ba-4bda-a0b9-da02e3e03a1b.png)<br />
-  dan didapatkan hasil peluang kelahiran 6 bayi dalam setahun ```0.1342466```
 
 * **Bandingkan hasil poin a dan b , Apa kesimpulan yang bisa didapatkan**<br />
-  Pada poin A, nilai ```0.1281201``` didapatkan menggunakan perhitungan eksakta dan menghasilkan nilai yang sama. Sedangkan pada poin B ```0.1342466``` didapatkan dari hasil simulasi peluang kelahiran 6 bayi selama setahun, dan memungkinkan untuk mengembalikan nilai yang berbeda-beda ditiap pengujiannya. Namun dapat disimpulkan bahwa nilai yang didapat pada poin A dan B hampir sama, karena hasil poin A sendiri juga terdapat di range hasil poin B.
+  Pada poin A, nilai ```0.12812``` didapatkan menggunakan perhitungan eksakta dan menghasilkan nilai yang sama. Sedangkan pada poin B didapatkan dari hasil simulasi peluang acak kelahiran 6 bayi selama setahun, dan memungkinkan untuk mengembalikan nilai yang berbeda-beda ditiap pengujiannya. Namun dapat disimpulkan bahwa nilai yang didapat pada poin A dan B hampir sama, karena hasil poin A sendiri juga terdapat di range hasil poin B.
 
 * **Nilai Rataan (μ) dan Varian (σ²) dari Distribusi Poisson**<br />
   Pada Distribusi Poisson nilai rataan dan varian sama dengan nilai lambda atau rata-rata historis terjadinya kelahiran 
@@ -168,11 +165,11 @@ Mencari fungsi probabilitas dari Distribusi Chi-Square dilakukan dengan mengguna
   x = 2
   v = 10
 
-  peluang <- dchisq(x, v)
-  paste("Peluang =", peluang)
+  chisq_dist <- dchisq(x, v)
+  paste("Peluang =", chisq_dist)
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/194837182-03754f25-df09-4a4c-b78f-b04c73ee1ec2.png)<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195310519-dd4c44ae-bc98-493b-ab5e-a5bf94d1262f.png)<br />
   didapatkan hasil ```0.00766```
  
 * **Histogram dari Distribusi Chi-Square dengan 100 data random.**<br />
@@ -207,18 +204,19 @@ Mencari fungsi probabilitas dari Distribusi Chi-Square dilakukan dengan mengguna
 ## No 5
 >**Diketahui bilangan acak (random variable) berdistribusi exponential (λ = 3). Tentukan:**<br /> Petunjuk: <br />- Gunakan set.seed(1) <br /> - Gunakan fungsi bawaan R<br />
 * **Fungsi Probabilitas dari Distribusi Exponensial**<br />
-Mencari fungsi probabilitas dari Distribusi Exponensial dilakukan dengan menggunakan fungsi ```dexp()``` dan menggunakan ```set.seed()``` agar bilangan acak yang diperoleh akan sama persis pada setiap pemanggilan fungsi ```rnorm()```.
+Mencari fungsi probabilitas dari Distribusi Exponensial bilangan acak dilakukan dengan menggunakan fungsi ```rexp()``` dengan parameter berisi sample size (1) dan rate = lambda.
 
   Code: <br />
   ```R
   lambda = 3
-
-  exp_dist <- dexp(lambda)
+  
+  set.seed(1)
+  exp_dist <- rexp(1, lambda)
   paste("Peluang =", exp_dist)
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/195168087-497b4f43-2f1e-49fa-b0ff-9e2d1fc7a921.png)<br />
-  didapatkan nilai ```0.49787```
+  ![image](https://user-images.githubusercontent.com/90106865/195308122-51bfe393-10a0-4703-bb78-9705f4fd0a2b.png)<br />
+  didapatkan nilai ```0.25172```
 * **Histogram dari Distribusi Exponensial untuk 10, 100, 1000 dan 10000 bilangan
 random**<br />
 Histogram Distribusi Exponensial dapat dibuat menggunakan fungsi ```hist()``` dan ```rexp```<br />
@@ -267,11 +265,11 @@ rata-rata = 5.083333<br />
 X1 = 5<br />
 X2 = 6<br />
 
-  Untuk menghitung Z-Score, saat generate 100 nilai random dapat menggunakan fungsi ```rnorm()``` dengan parameter n, mean, dan sd. Lalu mencari mean dari 100 nilai random menggunakan ```mean()``` dengan parameter data. Setelah itu menentukan X1 dan X2 sebagai range peluang dengan menggunakan fungsi ```floor()``` untuk mencari X1 (batas atas dari mean data), dan mencari nilai setelahnya atau X2 (batas atas mean data) menggunakan fungsi ```ceiling()```. Untuk mencari zScore atau skor standar, dapat menggunakan rumus sebagai berikut: <br />
-  
+  Untuk menghitung Z-Score, saat generate 100 nilai random dapat menggunakan fungsi ```rnorm()``` dengan parameter n, mean, dan sd. Lalu mencari mean dari 100 nilai random menggunakan ```mean()``` dengan parameter data. Setelah itu menentukan X1 dan X2 sebagai range peluang dengan menggunakan fungsi ```floor()``` untuk mencari X1 (batas atas dari mean data), dan mencari nilai setelahnya atau X2 (batas atas mean data) menggunakan fungsi ```ceiling()```. Untuk mencari Fungsi Probabilitas dari Distribusi Normal P(X1 ≤ x ≤ X2), dapat mengurangi ```pnorm``` dari x2 dan x1. Dan untuk mencari zScore atau skor standar, dapat menggunakan rumus sebagai berikut: <br />
+
   ```Z = (x - mean) / sd)```<br />
   
-  Dengan ```x = observed value```. Dan untuk membentuk grafik data generate random, dapat menggunakan fungsi ```plot()```<br />
+  Dengan ```x = data hasil generate```. Dan untuk membentuk grafik data generate random, dapat menggunakan fungsi ```plot()```<br />
   
   Code:<br />
   ```R
@@ -281,21 +279,25 @@ X2 = 6<br />
 
   set.seed(1)
   x = rnorm(n, mean, sd)
-  mean_data = mean(x)
 
+  mean_data = mean(x)
   X1 = floor(mean_data)
   X2 = ceiling(mean_data)
 
-  zScore = (x - mean) / sd
-  zScore
+  P = pnorm(X2, mean, sd) - pnorm(X1, mean, sd)
+  paste("P(X1 ≤ x ≤ X2) =", P)
 
+  zScore = (x - mean_data) / sd(data)
+  print("Z-Score:")
+  zScore
   plot(zScore)
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/195280798-2374358c-a87d-4b56-a621-463330626295.png)<br />
+  ![image](https://user-images.githubusercontent.com/90106865/195315805-be1e6b2e-ffc1-4a48-a899-ca1f03fcf41d.png)<br />
+  didapatkan P(X1 ≤ x ≤ X2) = ```0.04973```
 
   Grafik plot:<br />
-  ![image](https://user-images.githubusercontent.com/90106865/195180079-5c9d520e-0e78-4b19-a12e-b96ca3ed0412.png)
+  ![image](https://user-images.githubusercontent.com/90106865/195300242-559a7356-23f8-4491-ae03-3301ed1a1e82.png)
 
 * **Generate Histogram dari Distribusi Normal dengan breaks 50 dan format penamaan:** <br />
   Histogram Distribusi Normal dapat dibuat menggunakan fungsi ```hist()``` dengan parameter x dan breaks.<br />
@@ -308,12 +310,12 @@ X2 = 6<br />
   ![image](https://user-images.githubusercontent.com/90106865/195181142-0a054b4c-026d-4e72-aa89-b446e4fc7928.png)
   
 * **Nilai Varian (σ²) dari hasil generate random nilai Distribusi Normal**<br />
-  Karena nilai sd atau standar deviasi sudah diketahui yaitu 8, dan sesuai rumus yang berlaku, varian adalah hasil kuadrat dari standar deviasi.<br /> 
+  Sesuai rumus yang berlaku, varian adalah hasil kuadrat dari standar deviasi. Oleh karena itu dapat menggunakan fungsi ```sd()``` yang dikuadratkan dengan parameter x sebagai hasil generate randomnya.<br /> 
   Code: <br />
   ```R
-  varian = sd^2
+  varian = sd(x)^2
   paste("Varian =", varian)
   ```
   Output: <br />
-  ![image](https://user-images.githubusercontent.com/90106865/195182425-9fcc1a8e-b70a-488c-aa39-e401ca99f5a9.png)<br />
-  didapatkan varian ```64```.
+  ![image](https://user-images.githubusercontent.com/90106865/195301600-37b25fa3-185d-46f1-a9c8-da8c4c4e592c.png)<br />
+  didapatkan varian ```51.63277```.
